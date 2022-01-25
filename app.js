@@ -7,6 +7,7 @@ const mongosanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
 const cookieParser=require("cookie-parser");
+const compression = require("compression");
 
 const app = express();
 app.set('view engine','pug')
@@ -61,6 +62,7 @@ app.use(mongosanitize());
 //data sanitization against html
 app.use(xss());
 
+app.use(compression())//compress all the text sent to the client
 //Prevent parameter pollution (removes the duplicates in the parameters)
 app.use(
   hpp({

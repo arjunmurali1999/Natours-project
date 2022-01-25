@@ -39,7 +39,7 @@ exports.getalltours = (req, res) => {
 };
 exports.gettour = (req, res) => {
   // eslint-disable-next-line no-console
-  console.log(req.params);
+  // console.log(req.params);
   const id = req.params.id * 1;
   if (id > tours.length) {
     return res.status(404).json({

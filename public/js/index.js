@@ -30,7 +30,7 @@ if (loginForm) {
 }
 if(signupForm)
 { 
-  console.log('clicked')
+  // console.log('clicked')
   signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const name=document.getElementById("name").value;
